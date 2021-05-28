@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Docker App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script
+            src="https://code.jquery.com/jquery-3.2.1.js"
+            integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+            crossorigin="anonymous"></script>
+</head>
+<body style="background: ghostwhite;">
+
+<div class="container">
+    <div class="row">
+        <div class="col" style="text-align: center">
+            <h2>Docker App</h2>
+        </div>
+    </div>
+
+    <div class="row" style="width: 50%;margin: auto;">
+        <div class="col">
+            <div class="form-group">
+                <label for="input">Please put a new message</label>
+                <input class="form-control" id="input">
+                <input id="button" type="submit" value="Send" class="btn btn-primary">
+            </div>
+        </div>
+        <table class="table table-bordered" id="table">
+            <caption>Messages</caption>
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col">Message</th>
+                <th scope="col">Date</th>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+
+
+</div>
+
+</body>
+<script src="/js/app.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+</html>

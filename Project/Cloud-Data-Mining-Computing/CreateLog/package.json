@@ -1,0 +1,14 @@
+{
+  "name": "createlog",
+  "version": "1.0.0",
+  "description": "create log for data mining project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nicolas Aguilera Contreras",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.892.0"
+  }
+}

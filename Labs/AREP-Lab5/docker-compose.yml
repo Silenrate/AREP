@@ -1,0 +1,37 @@
+version: '2'
+
+services:
+  loadbalancer:
+    build:
+      context: ./RoundRobin
+      dockerfile: Dockerfile
+    depends_on:
+      - web
+    container_name: loadbalancer
+
+    ports:
+    - "80:7000"
+  web:
+    build:
+      context: ./LogService
+      dockerfile: Dockerfile
+    depends_on:
+      - db
+
+    ports:
+    - "35001-35003:6000"
+  db:
+    image: mongo:4.0.23
+    container_name: db
+    environment:
+      MONGO_INITDB_DATABASE: arep
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: admin
+    volumes:
+    - ./init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js:ro
+    - mongo:/data/db
+    ports:
+    - 27017:27017
+    command: mongod
+volumes:
+  mongo:

@@ -1,0 +1,23 @@
+version: 2.1
+
+orbs:
+  maven: circleci/maven@0.0.12
+
+jobs:
+  test:
+    machine:
+      image: ubuntu-1604:202007-01
+    steps:
+      - run: git clone https://github.com/Silenrate/AREP-Lab6.git
+      - run: cd AREP-Lab6
+      - run: echo $(pwd)
+      - run: echo $(ls)
+      - run: mvn test -f AREP-Lab6/LoginService/pom.xml
+      - run: mvn test -f AREP-Lab6/TimeService/pom.xml
+
+workflows:
+  maven_test:
+    description: "Testing The Login And The Time Service Apps"
+    jobs:
+      - test
+
